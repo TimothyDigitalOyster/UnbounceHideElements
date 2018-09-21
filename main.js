@@ -14,8 +14,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 $( document ).ready(function() {
   if (getUrlParameter('aff') == '929') {
-    var elements = $.data($('script[src*="UnbounceHideElements"]'), 'data-elements');
-    console.log(elements);
+    var elements = $('script[src*="UnbounceHideElements"]').attr('data-elements');
     $(elements).remove(); //Elements to remove.
   }
 });

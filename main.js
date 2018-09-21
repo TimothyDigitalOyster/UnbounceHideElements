@@ -11,10 +11,19 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
   }
 };
-      
+
+function getSyncScriptParams() {
+         var scripts = document.getElementsByTagName('script');
+         var lastScript = scripts[scripts.length-1];
+         var scriptName = lastScript;
+         return {
+             elements : scriptName.getAttribute('data-elements')
+         };
+ } 
+
 $( document ).ready(function() {
   if (getUrlParameter('aff') == '929') {
-    var elements = document.currentScript.getAttribute('elements');
+    var elements = getSyncScriptParams();
     $(elements).remove(); //Elements to remove.
   }
 });

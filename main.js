@@ -23,7 +23,9 @@ function getSyncScriptParams() {
 
 $( document ).ready(function() {
   if (getUrlParameter('aff') == '929') {
-    var elements = getSyncScriptParams();
+    
+    var elements = $.data($('script[src*="UnbounceHideElements"]'), 'data-element');
+    console.log("elements")
     $(elements).remove(); //Elements to remove.
   }
 });
